@@ -1,3 +1,4 @@
+`timescale 1ns / 1ps
 
 module ram_sync_read_d0(
 				input 	clock,			//Input signal for clock
