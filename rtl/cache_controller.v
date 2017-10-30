@@ -1,6 +1,6 @@
 module cache_controller(
-	input			clock,		//Clock input same as CPU and Memory controller(if MemController work on same freq.)
-	input			reset,	//Active Low Asynchronous Reset Signal Input
+	input			clock,		//Clock input same as CPU and Memory controller
+	input			reset,	//Reset Signal Input
 
 	inout	[DATAWIDTH-1:0]	data_cpu,	//Data bus from CPU
 	inout	[DATAWIDTH-1:0]	data_mem,	//Data bus to Main Memory
@@ -58,7 +58,7 @@ reg	write_enable_data_ram_1;
 reg	write_enable_tag_ram_0;	
 reg	write_enable_tag_ram_1;	
 
-reg	update_flag; 
+//reg	update_flag; 
 wire	hit;
 wire	hit_cache_0;
 wire	hit_cache_1;
@@ -92,7 +92,6 @@ reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] write_tag_cache_0;
 reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] write_tag_cache_1;
 reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] stread_tag_cache_0;
 reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] stread_tag_cache_1;
-
 reg	[AWIDTH-1:0]		 addrlatch;
 
 // State Variables
@@ -393,7 +392,6 @@ begin
 	end
 end
 
-// Instantiation of Tag RAM for Way 0
 
 defparam tr0.AWIDTH = 3;
 defparam tr0.DATAWIDTH = VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH; 
@@ -406,7 +404,6 @@ ram_sync_read_t0 tr0 (
 			.dout(read_tag_cache_0)
 			);
 
-// Instantiation of Tag RAM for Way 0
 
 defparam tr1.AWIDTH = 3;
 defparam tr1.DATAWIDTH = VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH;
@@ -419,7 +416,6 @@ ram_sync_read_t1 tr1 (
 			.dout(read_tag_cache_1)
 			);
 
-// Instantiation Data RAM for Way 0
 
 defparam dr0.AWIDTH = 3;
 defparam dr0.DATAWIDTH = DATAWIDTH*BLOCKSIZE;
@@ -432,7 +428,6 @@ ram_sync_read_d0 dr0 (
 			.dout(read_data_cache_0)
 			);
 
-// Instantiation Data RAM for Way 1
 
 defparam dr1.AWIDTH = 3;
 defparam dr1.DATAWIDTH = DATAWIDTH*BLOCKSIZE;
@@ -453,5 +448,5 @@ data_memory data (
 			.read_data(read_mem_4_byte)
 		);
 
-// END OF MODULE
+
 endmodule
