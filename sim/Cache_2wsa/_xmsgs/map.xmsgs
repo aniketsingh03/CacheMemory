@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="LIT" num="243" delta="new" >Logical network <arg fmt="%s" index="1">tr0/Mram_mem_array31/SPO</arg> has no load.
+</msg>
+
+<msg type="info" file="LIT" num="395" delta="new" >The above <arg fmt="%s" index="1">info</arg> message is repeated <arg fmt="%d" index="2">6</arg> more times for the following (max. 5 shown):
+<arg fmt="%s" index="3">tr1/Mram_mem_array32/SPO,
+dr0/Mram_mem_array62/SPO,
+tr0/Mram_mem_array32/SPO,
+dr0/Mram_mem_array61/SPO,
+dr1/Mram_mem_array61/SPO</arg>
+To see the details of these <arg fmt="%s" index="4">info</arg> messages, please use the -detail switch.
+</msg>
+
+<msg type="info" file="MapLib" num="562" delta="new" >No environment variables are currently set.
+</msg>
+
+<msg type="info" file="MapLib" num="825" delta="new" ><arg fmt="%s" index="1">RAM16X1D symbol &quot;dr0/Mram_mem_array61&quot; (output signal=rdata0&lt;30&gt;)</arg> INITSTATE has been changed from <arg fmt="%s" index="2">0080</arg> to <arg fmt="%s" index="3">8080</arg> because <arg fmt="%s" index="4">pin A3 is</arg> driven by GND. <arg fmt="%s" index="5">This pin has</arg> been connected to VCC instead, in order to relieve routing congestion.
+</msg>
+
+<msg type="info" file="MapLib" num="825" delta="new" ><arg fmt="%s" index="1">RAM16X1D symbol &quot;dr1/Mram_mem_array61&quot; (output signal=rdata1&lt;30&gt;)</arg> INITSTATE has been changed from <arg fmt="%s" index="2">006C</arg> to <arg fmt="%s" index="3">6C6C</arg> because <arg fmt="%s" index="4">pin A3 is</arg> driven by GND. <arg fmt="%s" index="5">This pin has</arg> been connected to VCC instead, in order to relieve routing congestion.
+</msg>
+
+<msg type="info" file="MapLib" num="825" delta="new" ><arg fmt="%s" index="1">RAM16X1D symbol &quot;dr1/Mram_mem_array62&quot; (output signal=rdata1&lt;31&gt;)</arg> INITSTATE has been changed from <arg fmt="%s" index="2">000F</arg> to <arg fmt="%s" index="3">0F0F</arg> because <arg fmt="%s" index="4">pin A3 is</arg> driven by GND. <arg fmt="%s" index="5">This pin has</arg> been connected to VCC instead, in order to relieve routing congestion.
+</msg>
+
+<msg type="info" file="MapLib" num="825" delta="new" ><arg fmt="%s" index="1">RAM16X1D symbol &quot;tr0/Mram_mem_array31&quot; (output signal=rtag0&lt;12&gt;)</arg> INITSTATE has been changed from <arg fmt="%s" index="2">0030</arg> to <arg fmt="%s" index="3">3030</arg> because <arg fmt="%s" index="4">pin A3 is</arg> driven by GND. <arg fmt="%s" index="5">This pin has</arg> been connected to VCC instead, in order to relieve routing congestion.
+</msg>
+
+<msg type="info" file="MapLib" num="825" delta="new" ><arg fmt="%s" index="1">RAM16X1D symbol &quot;tr0/Mram_mem_array32&quot; (output signal=rtag0&lt;13&gt;)</arg> INITSTATE has been changed from <arg fmt="%s" index="2">007F</arg> to <arg fmt="%s" index="3">7F7F</arg> because <arg fmt="%s" index="4">pin A3 is</arg> driven by GND. <arg fmt="%s" index="5">This pin has</arg> been connected to VCC instead, in order to relieve routing congestion.
+</msg>
+
+<msg type="info" file="MapLib" num="825" delta="new" ><arg fmt="%s" index="1">RAM16X1D symbol &quot;tr1/Mram_mem_array32&quot; (output signal=rtag1&lt;13&gt;)</arg> INITSTATE has been changed from <arg fmt="%s" index="2">007B</arg> to <arg fmt="%s" index="3">7B7B</arg> because <arg fmt="%s" index="4">pin A3 is</arg> driven by GND. <arg fmt="%s" index="5">This pin has</arg> been connected to VCC instead, in order to relieve routing congestion.
+</msg>
+
+<msg type="info" file="LIT" num="244" delta="new" >All of the single ended outputs in this design are using slew rate limited output drivers. The delay on speed critical single ended outputs can be dramatically reduced by designating them as fast outputs.
+</msg>
+
+<msg type="info" file="Pack" num="1716" delta="new" >Initializing temperature to <arg fmt="%0.3f" index="1">85.000</arg> Celsius. (default - Range: <arg fmt="%0.3f" index="2">0.000</arg> to <arg fmt="%0.3f" index="3">85.000</arg> Celsius)
+</msg>
+
+<msg type="info" file="Pack" num="1720" delta="new" >Initializing voltage to <arg fmt="%0.3f" index="1">1.140</arg> Volts. (default - Range: <arg fmt="%0.3f" index="2">1.140</arg> to <arg fmt="%0.3f" index="3">1.260</arg> Volts)
+</msg>
+
+<msg type="info" file="Map" num="215" delta="new" >The Interim Design Summary has been generated in the MAP Report (.mrp).
+</msg>
+
+<msg type="info" file="Pack" num="1650" delta="new" >Map created a placed design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr1/Mram_mem_array1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr1/Mram_mem_array5_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr0/Mram_mem_array5_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">tr1/Mram_mem_array1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">tr0/Mram_mem_array2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">tr0/Mram_mem_array1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">tr1/Mram_mem_array2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr0/Mram_mem_array1_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr0/Mram_mem_array3_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr1/Mram_mem_array3_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr1/Mram_mem_array2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr0/Mram_mem_array2_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr1/Mram_mem_array4_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+<msg type="warning" file="PhysDesignRules" num="367" delta="new" >The signal &lt;<arg fmt="%s" index="1">dr0/Mram_mem_array4_RAMD_D1_O</arg>&gt; is incomplete. The signal does not drive any load pins in the design.
+</msg>
+
+</messages>
+

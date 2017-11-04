@@ -1,3 +1,4 @@
+
 module cache_controller(
 	input			clock,		//Clock input same as CPU and Memory controller
 	input			reset,	//Reset Signal Input
@@ -10,10 +11,22 @@ module cache_controller(
 
 	input			read_cpu_enable,		//Read signal from CPU
 	input			write_cpu_enable,		//WRITE signal from CPU
-
+   input hit,
+	input hit_cache_0,
+	input hit_cache_1,
+	input valid,
+	input valid_bit_cache_0,
+	input valid_bit_cache_1,
+	input dirty,
+	input dirty_bit_cache_0,
+	input dirty_bit_cache_1,
 	output	reg		read_mem_enable,		//Read signal to Main Memory
 	output	reg		write_mem_enable,		//Write signal to Main Memory
-
+	input [13:0] read_tag_cache_0,
+	input [10:0] tagdata,
+	input [2:0] index,
+	input [1:0] bytsel,
+	input [13:0] read_tag_cache_1,
 	output	reg		stall_cpu,	//Stall Signal to CPU, to halt the CPU while undergoing any other operation
 	input			ready_memory	//Ready signal from Main memory, to know the status of memory
 
@@ -57,6 +70,7 @@ reg	write_enable_data_ram_0;
 reg	write_enable_data_ram_1;	
 reg	write_enable_tag_ram_0;	
 reg	write_enable_tag_ram_1;	
+reg	[3:0] count;	//To count byte transfer between Cache and memory during read and write memory operation, used as shift register.
 
 //reg	update_flag; 
 wire	hit;
@@ -93,6 +107,7 @@ reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] write_tag_cache_1;
 reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] stread_tag_cache_0;
 reg	[(VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH-1):0] stread_tag_cache_1;
 reg	[AWIDTH-1:0]		 addrlatch;
+reg	update_flag; // Internal flag, SET when enters Update MM state. It is used to make reuse of WAITFORMM state for both READMM and UPDATEMM 			//states
 
 // State Variables
 reg [2:0] state;
@@ -331,8 +346,28 @@ begin
 						end
 					end
 
-			WAITFORMM :	// code yet to be implemented, fsm (Finite State Machine) has been already designed 
+			WAITFORMM :	begin
+						if(ready_memory)
+						begin
+							if(update_flag)
+							state <= READMM;
+							else
+							state <= UPDATECACHE;
 
+							read_mem_enable <= 1'd0;
+							write_mem_enable <= 1'd0;
+						end
+						else
+						begin
+							if(!rdwr)
+							begin
+								write_data_1_byte <= write_mem_4_byte[7:0];
+								write_mem_4_byte<= {8'd0,write_mem_4_byte[31:8]};
+							end
+							state <= state;
+						end
+							
+					end
 			UPDATEMM :	begin
 						update_flag<= 1'd1;
 						if(used_bit_cache_0)
@@ -358,9 +393,41 @@ begin
 						end
 					end
 
-			UPDATECACHE:		// code yet to be implemented, fsm (Finite State Machine) has been already designed
-					
-			default:	begin
+			UPDATECACHE:	begin
+						update_flag<= 1'd0;
+						
+						if(count!=4'b1111)
+						begin
+							read_mem_4_byte <= {data_mem,read_mem_4_byte[31:8]};
+							count <= {1'd1,count[3:1]};
+						end
+						else
+						begin
+							write_data_register <= read_mem_4_byte;
+							state <= IDLE;
+						
+							if(used_bit_cache_0)
+							begin
+								write_tag_cache_1 <= {1'd1,1'd0,1'd0,addrlatch[15:5]};
+								write_tag_cache_0 <= {stread_tag_cache_0[13],1'd0,stread_tag_cache_0[11:0]};
+								write_enable_data_ram_0   <= 1'd1;
+								write_enable_data_ram_1   <= 1'd0;
+								write_enable_tag_ram_0  <= 1'd1;
+								write_enable_tag_ram_1  <= 1'd1;
+							end
+							else
+							begin
+								write_tag_cache_0 <= {1'd1,1'd1,1'd0,addrlatch[15:5]};
+								write_tag_cache_1 <= {stread_tag_cache_1[13],1'd1,stread_tag_cache_1[11:0]};
+								write_enable_data_ram_0   <= 1'd1;
+								write_enable_data_ram_1   <= 1'd0;
+								write_enable_tag_ram_0  <= 1'd1;
+								write_enable_tag_ram_1  <= 1'd1;
+							end
+						end
+						
+					end
+			default:	 begin
 							addrlatch <= 'd0;
 							addr_mem  <= 'd0;
 							read_mem_enable	  <= 'd0;
@@ -394,7 +461,7 @@ end
 
 
 defparam tr0.AWIDTH = 3;
-defparam tr0.DATAWIDTH = VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH; 
+defparam tr0.DWIDTH = VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH; 
 
 ram_sync_read_t0 tr0 (
 			.clock(clock),
@@ -406,7 +473,7 @@ ram_sync_read_t0 tr0 (
 
 
 defparam tr1.AWIDTH = 3;
-defparam tr1.DATAWIDTH = VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH;
+defparam tr1.DWIDTH = VALIDBIT+USEDBIT+DIRTYBIT+TAGWIDTH;
 
 ram_sync_read_t1 tr1 (
 			.clock(clock),
@@ -418,7 +485,7 @@ ram_sync_read_t1 tr1 (
 
 
 defparam dr0.AWIDTH = 3;
-defparam dr0.DATAWIDTH = DATAWIDTH*BLOCKSIZE;
+defparam dr0.DWIDTH = DATAWIDTH*BLOCKSIZE;
 
 ram_sync_read_d0 dr0 (
 			.clock(clock),
@@ -430,7 +497,7 @@ ram_sync_read_d0 dr0 (
 
 
 defparam dr1.AWIDTH = 3;
-defparam dr1.DATAWIDTH = DATAWIDTH*BLOCKSIZE;
+defparam dr1.DWIDTH = DATAWIDTH*BLOCKSIZE;
 
 ram_sync_read_d1 dr1 (
 			.clock(clock),
@@ -439,14 +506,4 @@ ram_sync_read_d1 dr1 (
 			.we(write_enable_data_ram_1),
 			.dout(read_data_cache_1)
 			);
-data_memory data (
-			.clk(clock),
-			.addr(addr_mem),
-			.write_data(write_mem_4_byte),
-			.memwrite(write_mem_enable),
-			.memread(read_mem_enable),
-			.read_data(read_mem_4_byte)
-		);
-
-
 endmodule

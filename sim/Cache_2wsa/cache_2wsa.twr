@@ -1,0 +1,151 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+/opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/trce -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml cache_2wsa.twx cache_2wsa.ncd -o cache_2wsa.twr
+cache_2wsa.pcf
+
+Design file:              cache_2wsa.ncd
+Physical constraint file: cache_2wsa.pcf
+Device,package,speed:     xc6slx45t,fgg484,C,-3 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock clock
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+addr_cpu<0> |    2.869(R)|      SLOW  |   -0.219(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<1> |    2.026(R)|      SLOW  |    0.002(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<2> |    2.341(R)|      SLOW  |   -0.001(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<3> |    1.940(R)|      SLOW  |    0.102(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<4> |    2.078(R)|      SLOW  |   -0.060(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<5> |    4.456(R)|      SLOW  |    0.067(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<6> |    4.656(R)|      SLOW  |    0.197(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<7> |    4.391(R)|      SLOW  |    0.332(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<8> |    4.702(R)|      SLOW  |    0.316(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<9> |    5.578(R)|      SLOW  |   -0.008(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<10>|    3.419(R)|      SLOW  |    0.503(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<11>|    4.475(R)|      SLOW  |    0.183(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<12>|    4.372(R)|      SLOW  |    0.254(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<13>|    4.455(R)|      SLOW  |    0.326(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<14>|    5.121(R)|      SLOW  |    0.342(R)|      SLOW  |clock_BUFGP       |   0.000|
+addr_cpu<15>|    5.221(R)|      SLOW  |    0.467(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<0> |    0.391(R)|      FAST  |    0.458(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<1> |    0.366(R)|      FAST  |    0.439(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<2> |    0.295(R)|      FAST  |    0.525(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<3> |    0.157(R)|      FAST  |    0.693(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<4> |    0.448(R)|      FAST  |    0.388(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<5> |    0.240(R)|      FAST  |    0.667(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<6> |    0.228(R)|      FAST  |    0.690(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_cpu<7> |    0.149(R)|      FAST  |    0.765(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<0> |    0.670(R)|      FAST  |    0.046(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<1> |    0.514(R)|      FAST  |    0.200(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<2> |    0.571(R)|      FAST  |    0.195(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<3> |    0.591(R)|      FAST  |    0.135(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<4> |    0.431(R)|      FAST  |    0.320(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<5> |    0.311(R)|      FAST  |    0.552(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<6> |    0.340(R)|      FAST  |    0.491(R)|      SLOW  |clock_BUFGP       |   0.000|
+data_mem<7> |    0.932(R)|      FAST  |   -0.397(R)|      SLOW  |clock_BUFGP       |   0.000|
+rd_cpu      |    3.370(R)|      SLOW  |   -0.295(R)|      SLOW  |clock_BUFGP       |   0.000|
+ready_mem   |    3.326(R)|      SLOW  |    0.109(R)|      SLOW  |clock_BUFGP       |   0.000|
+reset_n     |    3.023(R)|      SLOW  |    0.227(R)|      SLOW  |clock_BUFGP       |   0.000|
+wr_cpu      |    3.331(R)|      SLOW  |   -0.800(R)|      SLOW  |clock_BUFGP       |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock clock to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+addr_mem<2> |         7.626(R)|      SLOW  |         4.135(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<3> |         7.628(R)|      SLOW  |         4.090(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<4> |         7.225(R)|      SLOW  |         3.884(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<5> |         7.225(R)|      SLOW  |         3.884(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<6> |         7.513(R)|      SLOW  |         4.022(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<7> |         7.535(R)|      SLOW  |         4.054(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<8> |         7.579(R)|      SLOW  |         4.131(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<9> |         7.579(R)|      SLOW  |         4.131(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<10>|         7.572(R)|      SLOW  |         4.086(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<11>|         7.226(R)|      SLOW  |         3.855(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<12>|         7.437(R)|      SLOW  |         3.984(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<13>|         7.437(R)|      SLOW  |         3.984(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<14>|         7.531(R)|      SLOW  |         4.060(R)|      FAST  |clock_BUFGP       |   0.000|
+addr_mem<15>|         7.918(R)|      SLOW  |         4.354(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<0> |         7.855(R)|      SLOW  |         4.196(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<1> |         7.855(R)|      SLOW  |         4.196(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<2> |         7.671(R)|      SLOW  |         4.103(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<3> |         7.668(R)|      SLOW  |         4.110(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<4> |         7.659(R)|      SLOW  |         4.099(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<5> |         7.838(R)|      SLOW  |         4.194(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<6> |         7.634(R)|      SLOW  |         4.099(R)|      FAST  |clock_BUFGP       |   0.000|
+data_cpu<7> |         7.491(R)|      SLOW  |         4.012(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<0> |         8.025(R)|      SLOW  |         4.245(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<1> |         8.247(R)|      SLOW  |         4.184(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<2> |         8.247(R)|      SLOW  |         4.178(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<3> |         8.448(R)|      SLOW  |         4.121(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<4> |         8.448(R)|      SLOW  |         4.033(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<5> |         8.810(R)|      SLOW  |         4.097(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<6> |         8.810(R)|      SLOW  |         4.058(R)|      FAST  |clock_BUFGP       |   0.000|
+data_mem<7> |         9.831(R)|      SLOW  |         4.514(R)|      FAST  |clock_BUFGP       |   0.000|
+rd_mem      |         7.842(R)|      SLOW  |         4.176(R)|      FAST  |clock_BUFGP       |   0.000|
+stall_cpu   |         7.791(R)|      SLOW  |         4.213(R)|      FAST  |clock_BUFGP       |   0.000|
+wr_mem      |         7.645(R)|      SLOW  |         4.099(R)|      FAST  |clock_BUFGP       |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock clock
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clock          |    6.388|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+wr_cpu         |data_cpu<0>    |    7.193|
+wr_cpu         |data_cpu<1>    |    7.193|
+wr_cpu         |data_cpu<2>    |    7.410|
+wr_cpu         |data_cpu<3>    |    7.410|
+wr_cpu         |data_cpu<4>    |    6.891|
+wr_cpu         |data_cpu<5>    |    6.891|
+wr_cpu         |data_cpu<6>    |    7.108|
+wr_cpu         |data_cpu<7>    |    7.108|
+---------------+---------------+---------+
+
+
+Analysis completed Sat Nov  4 15:26:25 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 447 MB
+
+
+

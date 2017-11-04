@@ -1,0 +1,43 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o /home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_2wsa_tb_isim_beh.exe -prj /home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_2wsa_tb_beh.prj work.cache_2wsa_tb work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/ram_sync_read_t1.v" into library work
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/ram_sync_read_t0.v" into library work
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/ram_sync_read_d1.v" into library work
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/ram_sync_read_d0.v" into library work
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" into library work
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 59: Redeclaration of ansi port tagdata is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 60: Redeclaration of ansi port index is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 61: Redeclaration of ansi port bytsel is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 76: Redeclaration of ansi port hit is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 77: Redeclaration of ansi port hit_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 78: Redeclaration of ansi port hit_cache_1 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 80: Redeclaration of ansi port valid is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 81: Redeclaration of ansi port valid_bit_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 82: Redeclaration of ansi port valid_bit_cache_1 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 87: Redeclaration of ansi port dirty is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 88: Redeclaration of ansi port dirty_bit_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 89: Redeclaration of ansi port dirty_bit_cache_1 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 91: Redeclaration of ansi port read_tag_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../rtl/cache_controller.v" Line 92: Redeclaration of ansi port read_tag_cache_1 is not allowed
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/../../tb/cache_2wsa_tb.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 94816 KB
+Fuse CPU Usage: 1080 ms
+Compiling module ram_sync_read_t0(AWIDTH=3,DWIDTH...
+Compiling module ram_sync_read_t1(AWIDTH=3,DWIDTH...
+Compiling module ram_sync_read_d0(AWIDTH=3,DWIDTH...
+Compiling module ram_sync_read_d1(AWIDTH=3,DWIDTH...
+Compiling module cache_controller
+Compiling module cache_2wsa_tb
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Compiled 7 Verilog Units
+Built simulation executable /home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_2wsa_tb_isim_beh.exe
+Fuse Memory Usage: 655576 KB
+Fuse CPU Usage: 1150 ms
+GCC CPU Usage: 680 ms

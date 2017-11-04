@@ -1,0 +1,164 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.05 secs
+ 
+--> 
+Reading design: cache_controller.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "cache_controller.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "cache_controller"
+Output Format                      : NGC
+Target Device                      : xc6slx45t-3-fgg484
+
+---- Source Options
+Top Module Name                    : cache_controller
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/rtl/ram_sync_read_t1.v" into library work
+Parsing module <ram_sync_read_t1>.
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/rtl/ram_sync_read_t0.v" into library work
+Parsing module <ram_sync_read_t0>.
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/rtl/ram_sync_read_d1.v" into library work
+Parsing module <ram_sync_read_d1>.
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/rtl/ram_sync_read_d0.v" into library work
+Parsing module <ram_sync_read_d0>.
+Analyzing Verilog file "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" into library work
+Parsing module <cache_controller>.
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 59: Redeclaration of ansi port tagdata is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 60: Redeclaration of ansi port index is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 61: Redeclaration of ansi port bytsel is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 76: Redeclaration of ansi port hit is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 77: Redeclaration of ansi port hit_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 78: Redeclaration of ansi port hit_cache_1 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 80: Redeclaration of ansi port valid is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 81: Redeclaration of ansi port valid_bit_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 82: Redeclaration of ansi port valid_bit_cache_1 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 87: Redeclaration of ansi port dirty is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 88: Redeclaration of ansi port dirty_bit_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 89: Redeclaration of ansi port dirty_bit_cache_1 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 91: Redeclaration of ansi port read_tag_cache_0 is not allowed
+WARNING:HDLCompiler:751 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 92: Redeclaration of ansi port read_tag_cache_1 is not allowed
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <cache_controller>.
+ERROR:HDLCompiler:636 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 117: Net <tagdata[10]> is already driven by input port <tagdata[10]>.
+INFO - You can change the severity of this error message to warning using switch -change_error_to_warning "HDLCompiler:636"
+Driving port tagdata[10] is declared here
+Driving port tagdata[9] is declared here
+Driving port tagdata[8] is declared here
+Driving port tagdata[7] is declared here
+Driving port tagdata[6] is declared here
+Driving port tagdata[5] is declared here
+Driving port tagdata[4] is declared here
+Driving port tagdata[3] is declared here
+Driving port tagdata[2] is declared here
+Driving port tagdata[1] is declared here
+Driving port tagdata[0] is declared here
+Module cache_controller remains a blackbox, due to errors in its contents
+WARNING:HDLCompiler:1499 - "/home/wrath/Documents/CacheMemory/rtl/cache_controller.v" Line 2: Empty module <cache_controller> remains a black box.
+--> 
+
+
+Total memory usage is 317568 kilobytes
+
+Number of errors   :    1 (   0 filtered)
+Number of warnings :   15 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

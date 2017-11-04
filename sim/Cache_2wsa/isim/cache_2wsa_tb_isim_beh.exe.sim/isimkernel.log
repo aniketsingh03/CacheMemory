@@ -1,0 +1,10 @@
+Command line:
+   cache_2wsa_tb_isim_beh.exe
+     -simmode  gui
+     -simrunnum  1
+     -socket  44839
+
+Sat Nov  4 19:05:45 2017
+
+
+ Elaboration Time: 0.01 sec

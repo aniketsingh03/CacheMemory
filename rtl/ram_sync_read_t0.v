@@ -1,24 +1,23 @@
-`timescale 1ns / 1ps
 
-module cache_0_tag (
+module ram_sync_read_t0(
 				input 	clock,			
 				input 	[AWIDTH-1:0] addr,	
-				input 	[DWIDTH-1:0] data_in,	
-				input 	write_enable,			
-				output  	[DWIDTH-1:0] data_out	
+				input 	[DWIDTH-1:0] din,	
+				input 	we,			
+				output  	[DWIDTH-1:0] dout	
 				);
-
-
 
 parameter AWIDTH = 3;		
 parameter DWIDTH = 14;		
 localparam DEPTH  = 1 << AWIDTH;
 
+
 reg [DWIDTH-1:0] mem_array [0:DEPTH-1];
+
 
 initial
 begin
-	$readmemb("tag_cache_0.txt", mem_array);
+	$readmemb("tagRam0.txt", mem_array);
 end
 
 
@@ -26,12 +25,13 @@ reg [AWIDTH-1:0] rd_addr;
 
 always@(posedge clock)
 begin
-	if(write_enable)
-		mem_array[addr] <= data_in;	
+	if(we)
+		mem_array[addr] <= din;	
 
 rd_addr <= addr;		
 end
 
-assign data_out = mem_array[rd_addr];
+
+assign dout = mem_array[rd_addr];
 
 endmodule

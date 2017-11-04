@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_2wsa_tb_isim_beh.exe" -prj "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_2wsa_tb_beh.prj" "work.cache_2wsa_tb" "work.glbl" 

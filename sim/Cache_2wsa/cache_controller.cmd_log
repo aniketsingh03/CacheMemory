@@ -1,0 +1,6 @@
+xst -intstyle ise -ifn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.xst" -ofn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.syr" 
+xst -intstyle ise -ifn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.xst" -ofn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.syr" 
+xst -intstyle ise -ifn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.xst" -ofn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.syr" 
+xst -intstyle ise -ifn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.xst" -ofn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.syr" 
+xst -intstyle ise -ifn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.xst" -ofn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.syr" 
+xst -intstyle ise -ifn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.xst" -ofn "/home/wrath/Documents/CacheMemory/sim/Cache_2wsa/cache_controller.syr" 
